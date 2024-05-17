@@ -7,6 +7,8 @@ locals {
       amount             = "10.50"
       sourceAccount      = "account a"
       destinationAccount = "account b"
+      vaultUuid          = "changeme"
+      secretUuid         = "changeme"
       reoccuringDate     = "June 17"
       billingStart       = null # if null, will be assigned a date 1 year in the past from date.now()
       billingEnd         = null # if null, will be assigned a date 5 years in the future from date.now()
@@ -27,6 +29,8 @@ resource "aws_dynamodb_table_item" "this" {
     "amount" : { "S" : each.value.amount },
     "sourceAccount" : { "S" : each.value.sourceAccount },
     "destinationAccount" : { "S" : each.value.destinationAccount },
+    "vaultUuid" : { "S" : each.value.vaultUuid },
+    "secretUuid" : { "S" : each.value.SecretUuid },
     "reoccuringDate" : { "S" : each.value.reoccuringDate },
     "billingStart" : { "S" : each.value.billingStart != null ? each.value.billingStart : formatdate("DD MMM YYYY", timeadd(timestamp(), "-8760h")) },
     "billingEnd" : { "S" : each.value.billingEnd != null ? each.value.billingEnd : formatdate("DD MMM YYYY", timeadd(timestamp(), "43800h")) },
