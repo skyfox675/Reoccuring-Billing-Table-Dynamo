@@ -9,7 +9,7 @@ locals {
       destinationAccount = "account b"
       vaultUuid          = "changeme"
       secretUuid         = "changeme"
-      reoccuringDate     = "June 17"
+      reoccuringDate     = "17 May"
       billingStart       = null # if null, will be assigned a date 1 year in the past from date.now()
       billingEnd         = null # if null, will be assigned a date 5 years in the future from date.now()
     }
