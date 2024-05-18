@@ -10,8 +10,8 @@ locals {
       vaultUuid          = "changeme"
       secretUuid         = "changeme"
       reoccuringDate     = "17 May"
-      billingStart       = null # if null, will be assigned a date 1 year in the past from date.now()
-      billingEnd         = null # if null, will be assigned a date 5 years in the future from date.now()
+      billingStart       = null # "dd MMM YYYY" ex. "17 May 2024" if null, will be assigned a date 1 year in the past from date.now()
+      billingEnd         = null # "dd MMM YYYY" ex. "17 May 2024" if null, will be assigned a date 5 years in the future from date.now()
     }
   }
 }
